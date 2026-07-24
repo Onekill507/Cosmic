@@ -1,0 +1,25 @@
+# Copy to terraform.tfvars and replace placeholders. This file is safe to
+# commit; terraform.tfvars is ignored. Never put admin_password in either file.
+
+subscription_id             = "00000000-0000-0000-0000-000000000000"
+avd_user_or_group_object_id = "00000000-0000-0000-0000-000000000000"
+
+# Vietnam-adjacent default only. Verify GPU SKU capacity and quota first.
+location    = "southeastasia"
+name_prefix = "gpuavd"
+environment = "personal"
+
+# Full NVIDIA A10 partition, 36 vCPUs, 24 GB GPU VRAM where available. This is
+# a chargeable GPU VM; it is not an Azure free-tier size.
+vm_size         = "Standard_NV36ads_A10_v5"
+os_disk_size_gb = 256
+
+# Keep false until you have accepted current Azure GPU, disk, data-transfer,
+# Windows/AVD licensing costs and verified quota/capacity in the selected region.
+confirm_paid_gpu_deployment = false
+
+# Optional resource tags, for example:
+# tags = {
+#   owner      = "your-name"
+#   cost-center = "personal-lab"
+# }

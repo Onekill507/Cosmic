@@ -1,0 +1,15 @@
+# Terraform state, plans, and local overrides can contain Azure credentials and AVD registration tokens.
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan
+*.tfvars
+!terraform.tfvars.example
+crash.log
+crash.*.log
+
+# Editor and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
